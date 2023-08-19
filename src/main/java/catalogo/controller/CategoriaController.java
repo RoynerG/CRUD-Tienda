@@ -27,7 +27,7 @@ public class CategoriaController {
     }
 
     @PostMapping
-    public ResponseEntity<String> crearCategoria(@ResponseBody Categoria categoria) {
+    public ResponseEntity<String> crearCategoria(Categoria categoria) {
         categoriaService.crearCategoria(categoria);
         return ResponseEntity.status(HttpStatus.CREATED).body("Se ha creado la categoria");
 

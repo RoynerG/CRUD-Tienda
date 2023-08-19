@@ -16,17 +16,17 @@ public class ProductoController {
     private final ProductoService productoService;
 
     @Autowired
-    public ProductoController(ProductoService productoService){
+    public ProductoController(ProductoService productoService) {
         this.productoService = productoService;
     }
 
     @GetMapping
-    public List<Producto> obtenerProductos(){
+    public List<Producto> obtenerProductos() {
         return productoService.obtenerProductos();
     }
 
     @PostMapping
-    public ResponseEntity<String> crearProducto(@ResponseBody Producto producto){
+    public ResponseEntity<String> crearProducto(Producto producto) {
         productoService.crearProducto(producto);
         return ResponseEntity.status(HttpStatus.CREATED).body("Se ha creado el producto");
 
